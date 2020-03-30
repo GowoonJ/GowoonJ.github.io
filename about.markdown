@@ -1,10 +1,12 @@
 ---
 layout: page
-title: About
+title: About Me
 permalink: /about/
 ---
 
-<h1>header</h1>
+<h1>Who Am I? </h1>
+
+<h4>인천대학교 정보통신공학과 17학번 정고운</h4>
 
 
 
@@ -12,16 +14,5 @@ permalink: /about/
 
 
 
-<h4>gowoon's github -> [gowoon github](www.github.com/gowoonJ)</h4>
+gowoon's github : [gowoon github](https://www.github.com/gowoonJ)
 
-
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-[jekyll-organization]: https://github.com/jekyll

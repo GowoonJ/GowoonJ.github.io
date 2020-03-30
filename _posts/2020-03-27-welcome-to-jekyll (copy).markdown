@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "test post"
+title:  "init post"
 date:   2020-03-27 16:19:40 +0900
 categories: jekyll update
 ---
