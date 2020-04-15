@@ -3,11 +3,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Gowoon's Repo"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
+name                     : "Gowoon Jung"
+description              : "The codes I've been practicing"
 url                      : # the base hostname & protocol for your site e.g. "https://GowoonJ.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "GowoonJ/GowoonJ.github.io"
@@ -80,12 +80,12 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Gowoon Jung"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
-  email            :
-  links:
+  bio              : "follow me  **github.com/GowoonJ**"
+  location         : "Republic of Korea"
+  email            : jgw972229@gmail.com
+  links: https://github.com/GowoonJ
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: mailto:your.name@email.com
@@ -120,12 +120,9 @@ footer:
     - label: "GitLab"
       icon: "fab fa-fw fa-gitlab"
       # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      url: https://www.instagram.com/gowoon_ii/
 
 
 # Reading Files
