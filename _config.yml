@@ -85,7 +85,7 @@ author:
   bio              : "follow me  **github.com/GowoonJ**"
   location         : "Republic of Korea"
   email            : jgw972229@gmail.com
-  links: https://github.com/GowoonJ
+  links: 
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       # url: mailto:your.name@email.com
