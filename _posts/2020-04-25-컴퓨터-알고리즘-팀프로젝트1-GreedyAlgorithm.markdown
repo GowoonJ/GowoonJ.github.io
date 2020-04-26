@@ -49,11 +49,12 @@ categories: jekyll update
              int Taco=2000;
              int price1,price2,price3;
      
+             /* 샌드위치 , 버거세트 ,타코 구입 총 가격 */
              price1=Sand *sc.nextInt();
              price2=burgerset*sc.nextInt();
-             price3=Taco*sc.nextInt();          /* 샌드위치 , 버거세트 ,타코 구입 총 가격 */
-             int money;
-             money=sc.nextInt(); //가지고 있는돈
+             price3=Taco*sc.nextInt();     
+             
+             int money=sc.nextInt(); //가지고 있는돈
              int sum=price1+price2+price3;// 총가격
              while(true) {
                  if(money<sum) {
@@ -66,17 +67,18 @@ categories: jekyll update
                  }
              }
      
-     
-             if(money==0) System.out.println("거스름돈이 없습니다!");//지출액이 가진돈과 맞아떨어지면 출력
-             int arr[]= {100,500,1000,5000,10000,50000};//지폐종류값 할당 배열 ex)1000원 50000원 등등등
-     
-     
+     		//지출액이 가진돈과 맞아떨어지면 출력
+             if(money==0) System.out.println("거스름돈이 없습니다!");
+             int arr[]= {100,500,1000,5000,10000,50000};
+     		//지폐종류값 할당 배열 ex)1000원 50000원 등등등
      
              int cnt=0; //지폐,동전 개수 카운트 변수
      
-             for(int i=5;i>=0;i--)//큰 화폐단위부터 봐줘야 하기 때문에 i를 n-1부터 줄어들게함
+             //큰 화폐단위부터 봐줘야 하기 때문에 i를 n-1부터 줄어들게함
+             for(int i=5;i>=0;i--)
              {
-                 cnt=0;//한바퀴 돌고 나면 카운트 0으로 초기화 그래야 다음 화폐종류의 개수가 나온다.
+                 //한바퀴 돌고 나면 카운트 0으로 초기화 그래야 다음 화폐종류의 개수가 나온다.
+                 cnt=0;
                  while(money-arr[i]>=0)
                  {
                      money=money-arr[i];
@@ -105,8 +107,9 @@ categories: jekyll update
 
   1) Calculator App.java
 
+
+
 ```java
-    ~~~~
     public class CalculatorApp extends JFrame{
         private void start(){
             JFrame frame = new JFrame("Calculator App");
@@ -122,42 +125,46 @@ categories: jekyll update
             client.start();
         }
     }
-    ~~~~
   
-  >JFrame 상속, 초기 설정
-  >main 함수 내부에서 start() 호출하여 JFrame visible 로 실행
 ```
+
+ >JFrame 상속, 초기 설정
+ >main 함수 내부에서 start() 호출하여 JFrame visible 로 실행
 
   2) spinner limited
 
-        ~~~~java
-        private void setButtonLimit(){
-            SpinnerModel spinnerModel1 = new SpinnerNumberModel(0, 0, 100, 1);
-            SpinnerModel spinnerModel2 = new SpinnerNumberModel(0, 0, 100, 1);
-            SpinnerModel spinnerModel3 = new SpinnerNumberModel(0, 0, 100, 1);
-            spinner1.setModel(spinnerModel1);
-            spinner2.setModel(spinnerModel2);
-            spinner3.setModel(spinnerModel3);                                    
-        }    
-        ~~~~
+```java
+    private void setButtonLimit(){
+        SpinnerModel spinnerModel1 = new SpinnerNumberModel(0, 0, 100, 1);
+        SpinnerModel spinnerModel2 = new SpinnerNumberModel(0, 0, 100, 1);
+        SpinnerModel spinnerModel3 = new SpinnerNumberModel(0, 0, 100, 1);
+        spinner1.setModel(spinnerModel1);
+        spinner2.setModel(spinnerModel2);
+        spinner3.setModel(spinnerModel3);                                    
+    }    
+```
 
-​    ~~~~
-​      
+   > SpinnerModel 을 이용하여 초기값, 최저, 최대, 클릭 시 증가값 설정 후 spinner에 적용
+   > **(고려사항)** 모든 스피너에 같은 SpinnerNumberModel 을 적용할 경우, 모든 spinner의 값이 동시 증가할 수 있음
 
-      > SpinnerModel 을 이용하여 초기값, 최저, 최대, 클릭 시 증가값 설정 후 spinner에 적용
-      > **(고려사항)** 모든 스피너에 같은 SpinnerNumberModel 을 적용할 경우, 모든 spinner의 값이 동시 증가할 수 있음
+ 
 
-  3) 알고리즘 시행 전 GUI
+ 3) 알고리즘 시행 전 GUI
 
-  초기 화면
-  ![initGUI](src/images/CalcultorApp_init.jpg)
+-  초기 화면
 
-  입력한 금액이 없을 경우 예외 처리
-  ![initGUI](src/images/CalcultorApp_no_input_money.jpg)
+  ![initGUI](C:\Users\jgw97\my-awesome-site\assets\image\CalcultorApp_init.jpg)
 
-  선택한 음식이 없을 경우 예외 처리
-  ![initGUI](src/images/CalcultorApp_no_input.jpg)
     
+
+- 입력한 금액이 없을 경우 예외 처리  ![noInputMoneyGUI](C:\Users\jgw97\my-awesome-site\assets\image\CalcultorApp_no_input_money.jpg)
+
+
+
+- 선택한 음식이 없을 경우 예외 처리
+
+  ![noInputGUI](C:\Users\jgw97\my-awesome-site\assets\image\CalcultorApp_no_input.jpg)
+      
 
   #### 3. Greedy + GUI
 
@@ -174,7 +181,7 @@ categories: jekyll update
                     inputMoney = Integer.parseInt(money);
         
                     if (inputMoney != 0){
-                        if ( greedyAlgorithm.getIsPay(inputMoney, costArray.get(3))){
+                        if ( greedyAlgorithm.getIsPay(inputMoney, costArray.get(3)){
                             
                             // greedyAlgorithm class 의 거스름돈 계산함수 호출
                             greedyAlgorithm.moneyChange();
@@ -257,7 +264,7 @@ categories: jekyll update
   - 거스름돈 출력 함수를 이용하여 (JTextArea)ChangeArea 에 출력
 
   - 최종 화면
-    ![initGUI](src/images/CalcultorApp_Result.jpg)
+    ![resultGUI](C:\Users\jgw97\my-awesome-site\assets\image\CalcultorApp_Result.jpg)
 
 
 
