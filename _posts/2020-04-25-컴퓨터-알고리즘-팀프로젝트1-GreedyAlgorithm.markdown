@@ -1,4 +1,13 @@
-## 2020 1학기 컴퓨터알고리즘 조별과제1
+---
+layout: single
+title:  "컴퓨터 알고리즘 팀프로젝트1 GreedyAlgorithm"
+date:   2020-04-25 01:19:40 +0900
+categories: jekyll update
+---
+
+
+
+## 2020 1학기 컴퓨터알고리즘 팀프로젝트1 GreedyAlgorithm
 
 ### Java Swing 이용하여 자판기 GUI 구현
 
@@ -18,7 +27,8 @@
   
 
    #### 1. **Greedy Algorithm** 
-  ~~~~
+
+  ~~~~java
      import java.util.*;
      
      public class GreedyAlgorithm {
@@ -82,42 +92,45 @@
      
          }
      }
-   ~~~~
-  
-      
+  ~~~~
+
+
    >위 코드는 탐욕 알고리즘을 이용해  받은 거스름돈을 지폐와 동전으로 변환해주는 코드를 구현하였는데, 
-   만일 arr[] 의 값들을 할당할 때  오름차순으로 배열하지 않는다면 sort() 함수를 사용하여 오름차순으로 배열한뒤, 사용해야 한다.
-       
-  
+   >만일 arr[] 의 값들을 할당할 때  오름차순으로 배열하지 않는다면 sort() 함수를 사용하여 오름차순으로 배열한뒤, 사용해야 한다.
+
+
   #### 2.  **Java Swing**
-  
+
   > IntelliJ 에 내장된 GUI tool 을 이용하여 구현, GUI 는 form 으로 1차 구현 후, CalculatorApp class를 이용하여 입/출력 제어
- 
+
   1) Calculator App.java
-  
-        ~~~~
-        public class CalculatorApp extends JFrame{
-            private void start(){
-                JFrame frame = new JFrame("Calculator App");
-                           frame.setContentPane(mainJPanel);
-                           frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                           frame.setResizable(true);
-                           frame.pack();
-                frame.setVisible(true);
-            }
-            
-            public static void main(String[] args){
-                CalculatorApp client = new CalculatorApp();
-                client.start();
-            }
+
+```java
+    ~~~~
+    public class CalculatorApp extends JFrame{
+        private void start(){
+            JFrame frame = new JFrame("Calculator App");
+                       frame.setContentPane(mainJPanel);
+                       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                       frame.setResizable(true);
+                       frame.pack();
+            frame.setVisible(true);
         }
-        ~~~~
-      
-      >JFrame 상속, 초기 설정
-      >main 함수 내부에서 start() 호출하여 JFrame visible 로 실행
+        
+        public static void main(String[] args){
+            CalculatorApp client = new CalculatorApp();
+            client.start();
+        }
+    }
+    ~~~~
   
+  >JFrame 상속, 초기 설정
+  >main 함수 내부에서 start() 호출하여 JFrame visible 로 실행
+```
+
   2) spinner limited
-        ~~~~
+
+        ~~~~java
         private void setButtonLimit(){
             SpinnerModel spinnerModel1 = new SpinnerNumberModel(0, 0, 100, 1);
             SpinnerModel spinnerModel2 = new SpinnerNumberModel(0, 0, 100, 1);
@@ -127,57 +140,63 @@
             spinner3.setModel(spinnerModel3);                                    
         }    
         ~~~~
-      
+
+​    ~~~~
+​      
+
       > SpinnerModel 을 이용하여 초기값, 최저, 최대, 클릭 시 증가값 설정 후 spinner에 적용
       > **(고려사항)** 모든 스피너에 같은 SpinnerNumberModel 을 적용할 경우, 모든 spinner의 값이 동시 증가할 수 있음
-  
+
   3) 알고리즘 시행 전 GUI
-  
+
   초기 화면
   ![initGUI](src/images/CalcultorApp_init.jpg)
-  
+
   입력한 금액이 없을 경우 예외 처리
   ![initGUI](src/images/CalcultorApp_no_input_money.jpg)
-  
+
   선택한 음식이 없을 경우 예외 처리
   ![initGUI](src/images/CalcultorApp_no_input.jpg)
     
-  
+
   #### 3. Greedy + GUI
-    
-            private GreedyAlgorithm greedyAlgorithm = new GreedyAlgorithm();
-            
-            private void start(){
-            ...
-                inputButton.addActionListener(e->{
-                        String money = textFieldInput.getText();
-                        if (money.equals("")){
-                            money = "0";
+
+```java
+        private GreedyAlgorithm greedyAlgorithm = new GreedyAlgorithm();
+        
+        private void start(){
+        ...
+            inputButton.addActionListener(e->{
+                    String money = textFieldInput.getText();
+                    if (money.equals("")){
+                        money = "0";
+                    }
+                    inputMoney = Integer.parseInt(money);
+        
+                    if (inputMoney != 0){
+                        if ( greedyAlgorithm.getIsPay(inputMoney, costArray.get(3))){
+                            
+                            // greedyAlgorithm class 의 거스름돈 계산함수 호출
+                            greedyAlgorithm.moneyChange();
+                            setChangeArea(greedyAlgorithm.getChangeCost());
+                        }else{
+                            textFieldInput.setText("금액을 다시 입력해주세요");
                         }
-                        inputMoney = Integer.parseInt(money);
-            
-                        if (inputMoney != 0){
-                            if ( greedyAlgorithm.getIsPay(inputMoney, costArray.get(3))){
-                                
-                                // greedyAlgorithm class 의 거스름돈 계산함수 호출
-                                greedyAlgorithm.moneyChange();
-                                setChangeArea(greedyAlgorithm.getChangeCost());
-                            }else{
-                                textFieldInput.setText("금액을 다시 입력해주세요");
-                            }
-                        }else {
-                            textFieldInput.setText("금액을 입력해주세요");
-                        }
-            ...
-            }
+                    }else {
+                        textFieldInput.setText("금액을 입력해주세요");
+                    }
+        ...
+        }
+```
 
  
+
   > 금액 지불 버튼을 눌렀을 때 입력한 금액이 지불해야하는 금액보다 낮은지 계산 후,
   > if문을 통과한다면 greedyAlgorithm의 getChangeCost 함수 호출
   > 거스름돈 배열을 출력하는 setChangeArea() 함수에 ArrayList<String> 파라미터로 대입
-    
-   
-  ~~~~
+
+
+  ~~~~java
     public class GreedyAlgorithm {
         ...
     
@@ -210,14 +229,15 @@
         }
 
   ~~~~
-  
+
    앞서 언급하였던 Greedy class 를 수정하여 
+
    - Scanner.in
    - System.out.println 메소드 삭제
    - parameter와 ArrayList<String> 으로 입출력 값 설정
-   
- 
-  ~~~~
+
+
+  ~~~~java
     private void setChangeArea(ArrayList<String> arrayList){
           String changeOutput = "거스름 돈은\t 총 "+(inputMoney-sum)+ "원\n";
           
@@ -233,14 +253,12 @@
           changeArea.setText(changeOutput);
     }
   ~~~~
-  
+
   - 거스름돈 출력 함수를 이용하여 (JTextArea)ChangeArea 에 출력
-  
+
   - 최종 화면
     ![initGUI](src/images/CalcultorApp_Result.jpg)
-    
-  
+
 
 
  
-
