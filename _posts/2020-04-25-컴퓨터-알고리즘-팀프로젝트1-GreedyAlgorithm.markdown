@@ -101,6 +101,7 @@ categories: jekyll update
    >만일 arr[] 의 값들을 할당할 때  오름차순으로 배열하지 않는다면 sort() 함수를 사용하여 오름차순으로 배열한뒤, 사용해야 한다.
 
 
+
   #### 2.  **Java Swing**
 
   > IntelliJ 에 내장된 GUI tool 을 이용하여 구현, GUI 는 form 으로 1차 구현 후, CalculatorApp class를 이용하여 입/출력 제어
@@ -269,3 +270,8 @@ categories: jekyll update
 
 
  
+
+자세한 코드는 여기서 확인!
+
+[gowoonJ/computer-algorithm]: https://github.com/GowoonJ/computer-algorithm-group-hw	"컴퓨터 알고리즘 조별과제 1"
+
