@@ -1,11 +1,11 @@
 ---
 layout: single
-title:  "컴퓨터알고리즘 조별과제"
+title:  "컴퓨터알고리즘 팀프로젝트1"
 date:   2020-04-25 01:19:40 +0900
 categories: jekyll update
 ---
 
-## 2020 1학기 컴퓨터알고리즘 팀프로젝트1 GreedyAlgorithm
+## 2020 1학기 컴퓨터알고리즘 팀프로젝트1 
 
 ### Java Swing 이용하여 자판기 GUI 구현
 
