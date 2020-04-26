@@ -73,7 +73,7 @@ categories: jekyll update
 
 #### 출처 : 백준 [2352번 문제](https://www.acmicpc.net/problem/2352)
 
-![problemImage](https://github.com/GowoonJ/GowoonJ.github.io/blob/master/assets/image/baekjoon_2352_problem.jpg)
+[![noInputGUI](https://github.com/GowoonJ/GowoonJ.github.io/blob/master/assets/image/baekjoon_2352_problem.jpg)](https://github.com/GowoonJ/GowoonJ.github.io/blob/master/assets/image/baekjoon_2352_problem.jpg)
 
 
 > 입력
